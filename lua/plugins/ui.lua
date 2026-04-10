@@ -4,7 +4,7 @@ return {
 
   { -- Treesitter for better syntax highlighting
     'nvim-treesitter/nvim-treesitter',
-    build = ':TSUpdate',
+    build = ':TSUpdateSync',
     main = 'nvim-treesitter.configs',
     opts = {
       ensure_installed = {
