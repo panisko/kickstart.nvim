@@ -8,9 +8,20 @@ return {
     main = 'nvim-treesitter.configs',
     opts = {
       ensure_installed = {
-        'python', 'yaml', 'bash', 'json', 'toml', 'regex',
-        'lua', 'vim', 'vimdoc', 'html', 'markdown', 'markdown_inline',
-        'diff', 'jinja', -- for Ansible templates
+        'python',
+        'yaml',
+        'bash',
+        'json',
+        'toml',
+        'regex',
+        'lua',
+        'vim',
+        'vimdoc',
+        'html',
+        'markdown',
+        'markdown_inline',
+        'diff',
+        'jinja', -- for Ansible templates
       },
       auto_install = true,
       highlight = {
@@ -51,7 +62,6 @@ return {
           lualine_b = { 'branch', 'diff', 'diagnostics' },
           lualine_c = { 'filename' },
           lualine_d = { 'lsp_progress' },
-          lualine_w = { 'tabnine' },
           lualine_x = { 'ctime' },
           lualine_y = { 'encoding', 'fileformat', 'filetype' },
           lualine_z = { 'location' },
@@ -120,8 +130,11 @@ return {
   { -- Tmux integration
     'christoomey/vim-tmux-navigator',
     cmd = {
-      'TmuxNavigateLeft', 'TmuxNavigateDown',
-      'TmuxNavigateUp', 'TmuxNavigateRight', 'TmuxNavigatePrevious',
+      'TmuxNavigateLeft',
+      'TmuxNavigateDown',
+      'TmuxNavigateUp',
+      'TmuxNavigateRight',
+      'TmuxNavigatePrevious',
     },
     keys = {
       { '<c-h>', '<cmd><C-U>TmuxNavigateLeft<cr>' },
@@ -147,14 +160,34 @@ return {
       icons = {
         mappings = vim.g.have_nerd_font,
         keys = vim.g.have_nerd_font and {} or {
-          Up = '<Up> ', Down = '<Down> ', Left = '<Left> ', Right = '<Right> ',
-          C = '<C-…> ', M = '<M-…> ', D = '<D-…> ', S = '<S-…> ',
-          CR = '<CR> ', Esc = '<Esc> ', ScrollWheelDown = '<ScrollWheelDown> ',
-          ScrollWheelUp = '<ScrollWheelUp> ', NL = '<NL> ', BS = '<BS> ',
-          Space = '<Space> ', Tab = '<Tab> ',
-          F1 = '<F1>', F2 = '<F2>', F3 = '<F3>', F4 = '<F4>',
-          F5 = '<F5>', F6 = '<F6>', F7 = '<F7>', F8 = '<F8>',
-          F9 = '<F9>', F10 = '<F10>', F11 = '<F11>', F12 = '<F12>',
+          Up = '<Up> ',
+          Down = '<Down> ',
+          Left = '<Left> ',
+          Right = '<Right> ',
+          C = '<C-…> ',
+          M = '<M-…> ',
+          D = '<D-…> ',
+          S = '<S-…> ',
+          CR = '<CR> ',
+          Esc = '<Esc> ',
+          ScrollWheelDown = '<ScrollWheelDown> ',
+          ScrollWheelUp = '<ScrollWheelUp> ',
+          NL = '<NL> ',
+          BS = '<BS> ',
+          Space = '<Space> ',
+          Tab = '<Tab> ',
+          F1 = '<F1>',
+          F2 = '<F2>',
+          F3 = '<F3>',
+          F4 = '<F4>',
+          F5 = '<F5>',
+          F6 = '<F6>',
+          F7 = '<F7>',
+          F8 = '<F8>',
+          F9 = '<F9>',
+          F10 = '<F10>',
+          F11 = '<F11>',
+          F12 = '<F12>',
         },
       },
       spec = {
@@ -207,7 +240,8 @@ return {
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = 'Find buffers' })
       vim.keymap.set('n', '<leader>/', function()
         builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-          winblend = 10, previewer = false,
+          winblend = 10,
+          previewer = false,
         })
       end, { desc = '[/] Fuzzily search in buffer' })
       vim.keymap.set('n', '<leader>s/', function()

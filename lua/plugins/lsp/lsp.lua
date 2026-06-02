@@ -109,6 +109,15 @@ local specs = {
       local servers = {
         -- Python: Using pyright for better type checking
         pyright = {
+          on_new_config = function(config, root_dir)
+            -- Prefer .venv in the project root (uv / virtualenv convention)
+            local venv_python = root_dir .. '/.venv/bin/python'
+            if vim.fn.executable(venv_python) == 1 then
+              config.settings = vim.tbl_deep_extend('force', config.settings or {}, {
+                python = { pythonPath = venv_python },
+              })
+            end
+          end,
           settings = {
             python = {
               analysis = {
