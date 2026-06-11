@@ -47,7 +47,8 @@ return {
 
   { -- Status line
     'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons', 'archibate/lualine-time' },
+    -- dependencies = { 'nvim-tree/nvim-web-devicons', 'archibate/lualine-time' },
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = function()
       require('lualine').setup {
         options = {
@@ -55,16 +56,16 @@ return {
           theme = 'auto',
           component_separators = { left = '', right = '' },
           section_separators = { left = '', right = '' },
-          globalstatus = false,
+          -- globalstatus = false,
         },
         sections = {
           lualine_a = { 'mode' },
-          lualine_b = { 'branch', 'diff', 'diagnostics' },
-          lualine_c = { 'filename' },
-          lualine_d = { 'lsp_progress' },
-          lualine_x = { 'ctime' },
-          lualine_y = { 'encoding', 'fileformat', 'filetype' },
-          lualine_z = { 'location' },
+          -- lualine_b = { 'branch', 'diff', 'diagnostics' },
+          -- lualine_c = { 'filename' },
+          -- lualine_d = { 'lsp_progress' },
+          -- lualine_x = { 'ctime' },
+          -- lualine_y = { 'encoding', 'fileformat', 'filetype' },
+          -- lualine_z = { 'location' },
         },
       }
     end,
